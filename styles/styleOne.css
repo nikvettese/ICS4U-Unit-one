@@ -1,0 +1,194 @@
+body{
+    background-color:#00FFFF;
+    color: orange;
+    
+    /*font-family: Arial;
+    font-size: 20px;
+    font-weight: 1000;*/  
+    font: 1000 20px Arial; 
+    /* same as bove */
+
+    line-height: 2em;
+    margin: 20;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: green;
+}
+
+a:visited {
+    color: black;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.button [type="submit"] {
+    background-color: #333;
+    color: green;
+    padding: 10px 15px;
+    border: none;
+}
+
+.button:hover{
+    background: red;
+    color: #fff;
+}
+
+.clr{
+    clear: both;
+}
+
+.one{
+    background-color: violet;
+    color: brown;
+    border-right: 5px red solid;
+    border-bottom: 5px green dashed;
+    border-left: 5px green solid;
+    border-left-style: dotted;
+    padding-top: 20px;
+    margin-top: 50px;
+}
+
+/* How to do margin:
+Method 1:
+margin-top: 5px;
+margin-bottom: 6px;
+margin-right: 7px;
+margin-left: 8px;
+
+Method 2:
+margin: 5px 6px 7px 8px; */
+
+.one h1 {
+    text-decoration: underline;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    word-spacing: 1em;
+}
+
+.two {
+    border: 3px dotted #ccc;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.categories {
+    border: 1px #ccc solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.categories h2 {
+    text-align: center;
+}
+
+.categories ul {
+    padding: 0;
+    padding-left: 20px;
+    list-style: square;
+    list-style: none;
+}
+
+.categories li {
+    padding-bottom: 8px;
+    border-bottom: dotted 1px #333;
+    /*list-style-image: url('../images/bird.jpg');*/
+}
+
+.my-form {
+    padding: 20px;
+}
+
+.my-form .form-group {
+    padding-bottom: 15px;
+}
+
+.my-form label {
+    display: block;
+}
+
+.my-form input [type="text"], .my-form textarea {
+    padding: 8px;
+    width: 100%;
+}
+
+.block {
+    float: left;
+    width: 33.3%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#main-block {
+    float: left;
+    width: 70%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.p-box {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000;
+    margin-top: relative;
+    background-image: url('../images/clouds.jpg');
+    background-repeat: no-repeat;
+    background-position: 100px 200px;
+    background-position: center top;
+}
+
+.p-box h1 {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+
+.p-box h2 {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+}
+
+.fix-me {
+    position: fixed;
+    top: 400px;
+}
+
+.my-list li:first-child {
+    background: red;
+}
+
+.my-list li:last-child {
+    background: blue;
+}
+
+.my-list li:nth-child(5) {
+    background: yellow;
+}
+
+.my-list li:nth-child(even) {
+    background: grey;
+}
