@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Project</title>
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script>
+        function goHere(url){
+            location.href = url;
+        }
+
+        function submit() {
+            let msg = document.querySelector('#chat').value;
+            let container = document.querySelector(".chatBox");
+            let miniChat = document.createElement('miniChat');
+            miniChat.classList.add('miniChat');
+            let p = document.createElement('p');
+            p.innerHTML = msg;
+            miniChat.appendChild(p);
+            container.appendChild(miniChat);
+            document.querySelector('#chat').value = '';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class = "header-flex">
+            <div class = "logo-flex">
+                <div class = "logo-one">
+                    <img src = "images/BVG.PNG">
+                </div>
+                <div class = "logo-two">
+                    <h3>Bayview Glen</h3>
+                </div>
+            </div>            
+
+            <div class = "nav-flex">
+                <div class = "nav-one" onclick = "goHere('home.html')">
+                    <h4>Home</h4>
+                </div>
+                <div class = "nav-two" onclick = "goHere('calendar.html')">
+                    <h4>Calendar</h4>
+                </div>
+                <div class = "nav-three" onclick = "goHere('messages.html')">
+                    <h4>Messages</h4>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class = "main-classes">
+        <h2>Person 10</h2>
+        <div class = "chat">
+            <label for="chat">Begin Typing</label>
+            <input type="text" name="chat" id="chat" maxlength="8">
+            <button onclick="submit();">Enter</button>      
+         </div>
+         <div class = "chatBox"></div>
+    </section>
+</body>
+</html>

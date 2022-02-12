@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid 2</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr) 2fr;
+            /*grid-template-columns: 1fr, 1fr, 2fr;*/
+            grid-auto-rows: minmax(100px, auto);
+            /* minmax identified the min and max - auto allows it to span the height of the content */
+        }
+
+        .wrapper > div {
+            background: #ccc;
+            padding: 10px;
+        }
+
+        .wrapper > div:nth-child(odd) {
+            background: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ex, sed quidem est nam eos commodi assumenda consequuntur molestias aspernatur sequi. Atque, laudantium aliquid. Modi sequi aspernatur consequuntur earum at voluptates exercitationem quam repellat deserunt, id officia optio, nesciunt blanditiis natus maxime aliquid ducimus! Fuga laboriosam illo accusantium et earum nulla! Sapiente similique ea soluta eum maiores voluptatum? Amet tenetur officia doloribus dolor numquam id eum delectus nihil ipsa, ipsam ut ex. Commodi, hic. Enim voluptatibus error fuga expedita excepturi.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+        <div>Lorem ipsum dolor sit.</div>
+    </div>
+    
+</body>
+</html>

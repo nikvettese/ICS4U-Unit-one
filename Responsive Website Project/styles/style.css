@@ -1,0 +1,655 @@
+/*There are 6 unique HTML pages that are commented:
+home.html, messages.html, person1.html, calendar.html, announce.html, calculus.html*/
+
+body {
+    background-color: #faf6f4;
+}
+
+/*It was easiest to apply the body a background-color, and change the header back to white*/
+header {
+    background-color: white;
+    padding-bottom: 2.5px;
+}
+
+/*Decreasing the size of the image*/
+header img {
+    max-width: 60px;
+}
+
+/*Begin: styling the header-flex
+justify-content is used to space logo-flex and nav-flex*/
+.header-flex {
+    display: flex;
+    justify-content: space-around;
+    gap: 6px;
+}
+
+.logo-flex {
+    display: flex;
+    padding-top: 7.5px;
+}
+
+.logo-one {
+    margin-right: 5px;
+}
+
+.nav-flex {
+    display: flex;
+    margin-right: -10px;
+    padding-top: 7.5px;
+    margin-bottom: 15px;
+}
+
+/*Applying the same style to all three items/boxes in the nav-flex
+Box-shadow creates the affect around the box, great for appearance*/
+.nav-one,
+.nav-two,
+.nav-three {
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #ffcc04;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    min-width: 85px;
+    text-align: center;
+}
+
+/*This hover colour is used throughout the website*/
+.nav-flex div:hover {
+    background-color: #fff0b4;
+}
+
+/*Begin: styling the main-flex
+justify-content places classes-flex and announcements-uniplanning-flex in the center
+I thought the center was the best option for appearance*/
+.main-flex {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    min-height: 625px;
+    margin-bottom: -25px;
+}
+
+/*Announcements and uniplanning are displayed in a column (until the @media)*/
+.announcements-uniplanning-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+/*Styling the two items as circles*/
+.announcements,
+.uniplanning {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    border: 10px solid #a874c4;
+    background-color: #ffcc04;
+}
+
+/*Placing the titles in the right spot*/
+.announcements h4,
+.uniplanning h4 {
+    margin-top: 80px;
+}
+
+.announcements:hover,
+.uniplanning:hover {
+    background-color: #fff0b4;
+}
+
+/*classes-flex is displayed as a column*/
+.classes-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Styling the four classes the same*/
+.box-one,
+.box-two,
+.box-three,
+.box-four {
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    width: 220px;
+    height: 90px;
+}
+
+/*nth-child(odd) would have also been possible*/
+.box-one,
+.box-three {
+    background-color: #ffcc04;
+}
+
+.box-two,
+.box-three,
+.box-four {
+    margin-top: -15px;
+}
+
+.classes-flex h4 {
+    margin-top: 2px;
+}
+
+.classes-flex p {
+    font-size: 14px;
+}
+
+/*The arrow-right symbol - triangle, useful for making the page appear more interesting
+Only the border-left appears*/
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;    
+    border-left: 30px solid #a874c4;
+    margin-top: -70px;
+    margin-left: 195px;
+}
+
+.box-one:hover,
+.box-two:hover,
+.box-three:hover,
+.box-four:hover {
+    background-color: #fff0b4;
+}
+
+/*Begin: styling the footer
+The footer is a flexbox, wraps for responsiveness*/
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/*Styling each of the six boxes*/
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6 {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    height: 25px;
+    width: 150px;
+}
+
+/*Symbol: creating a filled-in circle for appearance*/
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #ffcc04;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/*Alternating dot colours: nth-child(even) would've also been possible*/
+.box2 .dot, 
+.box4 .dot, 
+.box6 .dot {
+    background-color: #a874c4;
+} 
+
+/*Placing the titles in the perfect spot*/
+footer h4 {
+    margin-left: 35px;
+    margin-top: -25px;
+}
+
+footer div:hover {
+    background-color: #fff0b4;
+}
+
+/*Main-classes is used across all HTML pages*/
+.main-classes {
+    background-color: #faf6f4;
+    border-bottom: 5px solid #a874c4;
+    border-top: 5px solid #a874c4;
+    margin-top: -6px;
+    padding-bottom: 20px;
+}
+
+/*Centres the title*/
+.main-classes h2 {
+    text-align: center;
+}
+
+/*Begin: styling main-classes-grid
+Creating three columns, one twice the length of the others
+Column and row gap of 15px*/
+.main-classes-grid {
+    display: grid;
+    grid-template-columns: 320px 160px 160px;
+    column-gap: 15px;
+    row-gap: 15px;
+    width: 670px;
+    margin: auto;
+    margin-bottom: -5px;
+}
+
+/*Applies to all items of the grid, creates the box effect*/
+.main-classes-grid div {
+    background-color: #ffcc04;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    height: 48px; 
+}
+
+/*Overrides the previous code to style the top row differently*/
+.main-classes-grid .today-title,
+.main-classes-grid .homework-title,
+.main-classes-grid .assignment-title {
+    background-color: #e5d5ed;
+    height: 24px;
+}
+
+/*Makes the centre column white*/
+.main-classes-grid .homework-one,
+.main-classes-grid .homework-two,
+.main-classes-grid .homework-three,
+.main-classes-grid .homework-four,
+.main-classes-grid .homework-five,
+.main-classes-grid .homework-six {
+    background-color: white;
+}
+
+/*Grid-item content*/
+.main-classes-grid h4 {
+    margin-top: -7px;
+}
+
+.main-classes-grid p {
+    margin-top: -20px;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+/*Begin: styling the main-groups-grid
+Unlike main-classes-grid: no assignments column, so only two columns
+Everything else is styled the same as main-classes-grid*/
+.main-groups-grid {
+    display: grid;
+    grid-template-columns: 320px 160px;
+    column-gap: 15px;
+    row-gap: 15px;
+    width: 500px;
+    margin: auto;
+    margin-top: -5px;
+}
+
+.main-groups-grid div {
+    background-color: #ffcc04;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    height: 48px; 
+}
+
+.main-groups-grid .today-title,
+.main-groups-grid .homework-title {
+    background-color: #e5d5ed;
+    height: 24px;
+}
+
+.main-groups-grid .homework-one,
+.main-groups-grid .homework-two,
+.main-groups-grid .homework-three,
+.main-groups-grid .homework-four,
+.main-groups-grid .homework-five,
+.main-groups-grid .homework-six {
+    background-color: white;
+}
+
+.main-groups-grid h4 {
+    margin-top: -7px;
+}
+
+.main-groups-grid p {
+    margin-top: -20px;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+/*Begin: styling messages-grid
+Two equal columns*/
+.messages-grid {
+    display: grid;
+    grid-template-columns: 160px 160px;
+    column-gap: 15px;
+    row-gap: 15px;
+    width: 340px;
+    margin: auto;
+}
+
+/*Again, styling each item with the box effect*/
+.messages-grid div {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    height: 45px; 
+    text-align: center;
+}
+
+/*Alternate box colours*/
+.messages-grid div:nth-child(even) {
+    background-color: #ffcc04;
+}
+
+/*The title takes both columns*/
+.messages-grid .today-title {
+    background-color: #e5d5ed;
+    height: 24px;
+    grid-column: 1/3;
+}
+
+.messages-grid h4 {
+    margin-top: 15px;
+}
+
+.messages-grid div:hover {
+    background-color: #fff0b4;
+}
+
+/*This overrides the previous code
+The same colour is used as the title background, so that there is no hover affect, since the title is not linked*/
+.messages-grid .today-title:hover {
+    background-color: #e5d5ed;
+}
+
+/*Assignment-title applies only to the four classes
+All three are styled the same*/
+.today-title h4,
+.homework-title h4,
+.assignment-title h4 {
+    margin-top: 3px;
+    text-align: center;
+}
+
+/*Begin: styling the individual chats
+.chat is the input area*/
+.chat {
+    background-color: #ffcc04;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    height: 24px;
+    width: 320px;
+    margin: auto;
+}
+
+/*.chatbox is the output area*/
+.chatBox {
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    height: 490px;
+    width: 320px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+/*.minichat p accesses each individual message, each message gets its own bubble like in real texting*/
+.miniChat p {
+    background-color: #e5d5ed;
+    border-radius: 10px;
+    padding: 15px 20px;
+    height: 18px;
+    width: 100px;
+    margin-left: 5px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/*Begin: styling the calendar*/
+.calendar {
+    max-width: 670px;
+    min-width: 330px;
+    margin: auto;
+    text-align: center;
+}
+
+/*Styling the three weeks as flexboxes*/
+.week2,
+.week3,
+.week4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+/*Styling the boxes within each flexbox*/
+.week2 div,
+.week3 div,
+.week4 div {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    height: 45px;
+    width: 120px;
+}
+
+/*Alternating background-colours*/
+.week2 div:nth-child(even),
+.week3 div:nth-child(even),
+.week4 div:nth-child(even) {
+    background-color: #ffcc04;
+}
+
+.calendar h4 {
+    margin-top: -8px;
+}
+
+.calendar p {
+    margin-top: -15px;
+}
+
+/*Begin: @media
+The first @media applies when width <= 500
+Only home.html is affected, accept for the header, which applies to all HTML pages*/
+@media(max-width: 500px) {
+    /*header-flex styled as column since there isn't enough room for logo-flex and nav-flex to be side-by-side*/
+    .header-flex {
+        flex-direction: column;
+        width: 280px;
+        margin: auto;
+    }
+
+    .logo-flex {
+        margin: auto;
+    }
+
+    .nav-flex {
+        padding-top: 0px;
+    }
+
+    /*Column-reverse is significant: classes-flex and announcements-uniplanning-flex no longer side-by-side
+    Instead: as a column, and the order is reversed so that announcements-uniplanning-flex is on top of classes-flex*/
+    .main-flex {
+        flex-direction: column-reverse;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+
+    /*The two circles are placed side-by-side rather than one on top of the other*/
+    .announcements-uniplanning-flex {
+        flex-direction: row;
+        margin-top: 20px;
+    }
+
+    .announcements, 
+    .uniplanning {
+        width: 140px;
+        height: 140px;
+    }
+
+    .announcements h4,
+    .uniplanning h4 {
+        width: 100px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .announcements h4 {
+        margin-left: 14px;
+        margin-top: 58px;
+    }
+
+    .classes-flex {
+        gap: 30px;
+    }
+
+    /*The footer boxes are slightly too wide, I prefer for at least 2 to be in each row*/
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6 {
+        width: 130px;
+    }
+
+    footer h4 {
+        width: 120px;
+        margin-left: 28px;
+    }
+
+    footer .dot {
+        margin-left: -5px;
+    }
+}
+
+/*The 2nd @media applies to the four class pages
+When width <= 710px, significant changes occur*/
+@media(max-width: 710px) {
+    /*main-classes-grid loses the third-column to make more space
+    Also, the width of the other two column is smaller*/
+    .main-classes-grid {
+        width: 370px;
+        grid-template-columns: 230px 115px;
+    }
+
+    /*To make room for the text after width is decreased, the height of each grid-item is increased*/
+    .main-classes-grid div {
+        height: 92px;
+    }
+
+    /*Due to massive change of eliminating the third column:
+    every grid-item must be relocated to their designated spot*/
+    .today-one {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .homework-one {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    
+    .today-two {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .homework-two {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    
+    .today-three {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .homework-three {
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+    
+    .today-four {
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+
+    .homework-four {
+        grid-column: 2/3;
+        grid-row: 5/6;
+    }
+    
+    .today-five {
+        grid-column: 1/2;
+        grid-row: 6/7;
+    }
+
+    .homework-five {
+        grid-column: 2/3;
+        grid-row: 6/7;
+    }
+    
+    .today-six {
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+
+    .homework-six {
+        grid-column: 2/3;
+        grid-row: 7/8;
+        margin-bottom: 15px;
+    }
+
+    /*Assignment-title now takes up both columns*/
+    .assignment-title {
+        grid-column: 1/3;
+    }
+
+    /*The assignment grid-items all get assigned their correct spots automatically after everything else is placed
+    The width is changed, an earlier line of code in the @media increased the height, this is reversed*/
+    .main-classes-grid .assignment-one,
+    .main-classes-grid .assignment-two,
+    .main-classes-grid .assignment-three,
+    .main-classes-grid .assignment-four,
+    .main-classes-grid .assignment-five,
+    .main-classes-grid .assignment-six {
+        width: 131.5px;
+        height: 48px;
+    }
+    
+    .assignment-two,
+    .assignment-four,
+    .assignment-six {
+        margin-left: -56.5px;
+    }
+}
+
+/*The final @media
+The main-groups-grid is easier to 'fix' than the main-classes-grid, since no third column needs to be moved
+When width <= 520px, the main-groups-grid becomes exactly the same as the main-classes-grid,
+except without the bottom four rows of assignments*/
+@media(max-width: 520px) {
+    .main-groups-grid {
+        width: 370px;
+        grid-template-columns: 230px 115px;
+    }
+
+    .main-groups-grid div {
+        height: 92px;
+    }
+
+    .homework-six {
+        margin-bottom: 15px;
+    }
+}
+

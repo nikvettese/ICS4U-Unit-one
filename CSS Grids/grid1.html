@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid 1</title>
+    <style>
+        .wrapper {
+            display: grid;
+            /*grid-template-columns: 70% 30%;*/
+            grid-template-columns: 1fr 2fr;
+            column-gap: 1em;
+            row-gap: 1em;
+        }
+
+        .wrapper > div {
+            background: #ccc;
+            padding: 10px;
+        }
+
+        .wrapper > div:nth-child(odd) {
+            background: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi dicta exercitationem nobis tempore, illo saepe labore quibusdam eligendi eos rem nulla at iusto est! Repellat totam impedit esse voluptatem. Exercitationem error hic quos facere vitae optio inventore, recusandae, obcaecati ipsam, veniam dignissimos repudiandae quisquam minima. Eaque, provident? Ipsam, est fuga nam corporis voluptatibus nostrum soluta at eos fugiat possimus iure, molestias tempora aspernatur perspiciatis! Voluptate, cupiditate vel! Laudantium minus expedita quo voluptatum reprehenderit. Asperiores cum voluptates tempore cupiditate illum magnam?
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur explicabo, fugit exercitationem quisquam soluta tempora quas eum. Fuga, nihil iure iusto cupiditate sunt itaque, aut nobis tempora ducimus, reprehenderit eius.
+        </div>
+        <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi dicta exercitationem nobis tempore, illo saepe labore quibusdam eligendi eos rem nulla at iusto est! Repellat totam impedit esse voluptatem. Exercitationem error hic quos facere vitae optio inventore, recusandae, obcaecati ipsam, veniam dignissimos repudiandae quisquam minima. Eaque, provident? Ipsam, est fuga nam corporis voluptatibus nostrum soluta at eos fugiat possimus iure, molestias tempora aspernatur perspiciatis! Voluptate, cupiditate vel! Laudantium minus expedita quo voluptatum reprehenderit. Asperiores cum voluptates tempore cupiditate illum magnam?
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur explicabo, fugit exercitationem quisquam soluta tempora quas eum. Fuga, nihil iure iusto cupiditate sunt itaque, aut nobis tempora ducimus, reprehenderit eius.
+        </div>
+    </div>
+    
+</body>
+</html>
