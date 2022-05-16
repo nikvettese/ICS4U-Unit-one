@@ -1,0 +1,125 @@
+{
+    "accounts": [
+      {
+        "id": "1",
+        "username": "nick@gmail.com",
+        "password": "Password1!",
+        "fullName": "Nick",
+        "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg"
+      },
+      {
+        "id": "2",
+        "username": "kitten@gmail.com",
+        "password": "Password1!",
+        "fullName": "Kitten",
+        "avatar": "https://cdn.vuetifyjs.com/images/lists/2.jpg"
+      }
+    ],
+    "communities": [
+      {
+        "id": "1",
+        "name": "Art Life",
+        "description": "This is the public community for art. Everyone is welcome!!!",
+        "image": "https://www.cdc.gov/physicalactivity/community-strategies/active-communities-tool/images/act-design-medium.png",
+        "members": []
+      },
+      {
+        "id": "2",
+        "name": "Ontario Health",
+        "description": "Stay together to fight against COVID.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMgFaaQ8AKmE92LrxX5KBKeBy6EG-HpEZmZg&usqp=CAU",
+        "members": []
+      }
+    ],
+    "posts": [
+      {
+        "id": "a85a8e6b-348b-4011-a1ec-1e78e9620777",
+        "owner": {
+          "id": 1,
+          "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+          "name": "Nick"
+        },
+        "message": "This is my first post",
+        "createdAt": "2022-05-11T14:45:00Z",
+        "comments": [
+          {
+            "id": "a85a8e6b-348b-4011-a1ec-1e78e9620782",
+            "owner": {
+              "id": 1,
+              "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+              "name": "Nick"
+            },
+            "createdAt": "2022-05-08T18:45:00Z",
+            "message": "My First Comment"
+          },
+          {
+            "id": "a85a8e6b-348b-4011-a1ec-1e78e9621292",
+            "owner": {
+              "id": 1,
+              "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+              "name": "Nick"
+            },
+            "createdAt": "2022-05-08T18:45:00Z",
+            "message": "My First Comment"
+          },
+          {
+            "id": "a85a8e6b-348b-4011-a1ec-1e78e9620984",
+            "owner": {
+              "id": 1,
+              "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+              "name": "Nick"
+            },
+            "createdAt": "2022-05-12T18:45:00Z",
+            "message": "My First Comment"
+          },
+          {
+            "id": "a85a8e6b-348b-4011-a1ec-1e78e9620159",
+            "owner": {
+              "id": 1,
+              "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+              "name": "Nick"
+            },
+            "createdAt": "2022-05-13T18:45:00Z",
+            "message": "My First Comment"
+          }
+        ],
+        "likes": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "id": "a85a8e6b-348b-4011-a1ec-1e78e9620600",
+        "owner": {
+          "id": 1,
+          "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+          "name": "Nick"
+        },
+        "message": "This is my second post",
+        "createdAt": "2022-05-12T14:45:00Z",
+        "comments": [
+          {
+            "id": "a85a8e6b-348b-4011-a1ec-1e78e9620766",
+            "owner": {
+              "id": 1,
+              "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+              "name": "Nick"
+            },
+            "createdAt": "2021-05-08T18:45:00Z",
+            "message": "My First comment"
+          },
+          {
+            "id": "a85a8e6b-348b-4011-a1ec-1e78e9620767",
+            "owner": {
+              "id": 1,
+              "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+              "name": "Nick"
+            },
+            "createdAt": "2021-05-10T18:45:00Z",
+            "message": "My Second comment"
+          }
+        ],
+        "likes": []
+      }
+    ]
+  }
