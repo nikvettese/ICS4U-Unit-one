@@ -23,16 +23,20 @@ export default {
     }
   },
   methods:{
+    //join the community
     async joinCommunity(id){
       const community = this.communities.find(c => c.id == id);
       let updatedMembers = community.members;
       const isMember = community.members.includes(this.loggingInUserId);
+      //brings user to community post if new member
       if(isMember){
         this.$router.push({name: 'CommunityPost', params: {id: id}});
       }else {
         updatedMembers.push(this.loggingInUserId.toString());
       }
+      //updates the community members - community inherited
       const toBeUpdatedCommunity = { ...community, members: updatedMembers }
+      //Submit to server
       const res = await fetch(`api/communities/${id}`, {
         method: 'PUT',
         headers: {
@@ -40,6 +44,7 @@ export default {
         },
         body: JSON.stringify(toBeUpdatedCommunity),
       });
+      //update app
       const data = await res.json()
       this.communities = this.communities.map((c) =>
           c.id === id ? { ...community, members: data.members } : c

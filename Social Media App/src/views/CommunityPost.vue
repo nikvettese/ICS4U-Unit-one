@@ -43,6 +43,7 @@ export default {
     }
   },
   methods: {
+    //add post based on message
     async addPost(postMessage){
       if(postMessage == null || postMessage.length == 0){
         alert(`What's the post message?`);
@@ -55,6 +56,7 @@ export default {
       };
       const postId = uuid.v4();
       const communityId = this.$route.params.id;
+      //create the post
       const newPost = {
         id: postId,
         owner: postOwner,
@@ -64,7 +66,7 @@ export default {
         comments: [],
         likes: []
       };
-      // Submit new post to server
+      //Submit new post to server
       const res = await fetch(`http://localhost:5000/posts`, {
         method: 'POST',
         headers: {
@@ -75,16 +77,20 @@ export default {
       const createdPost = await res.json()
       this.posts = [...this.posts, createdPost]
     },
+    //like a community post
     async submitLike(postId){
       const post = this.posts.find(p => p.id == postId);
       let updatedLikes = post.likes;
+      //checks if already liked
       const isLiked = post.likes.includes(this.loggingInUserId);
       if(isLiked){
         updatedLikes = updatedLikes.filter(uid => uid != this.loggingInUserId);
       }else {
         updatedLikes.push(this.loggingInUserId.toString());
       }
+      //updates the liked users, post inherited
       const toBeUpdatedPost = { ...post, likes: updatedLikes }
+      //Submit to server
       const res = await fetch(`http://localhost:5000/posts/${postId}`, {
         method: 'PUT',
         headers: {
@@ -92,6 +98,7 @@ export default {
         },
         body: JSON.stringify(toBeUpdatedPost),
       });
+      //update app
       const data = await res.json()
       this.posts = this.posts.map((post) =>
           post.id === postId ? { ...post, likes: data.likes } : post
@@ -109,7 +116,7 @@ export default {
     const communitiesRes = await fetch(`http://localhost:5000/communities`);
     const communities = await communitiesRes.json();
     this.community = communities.find(c => c.id == communityId);
-    // Get posts belong to the selected community
+    // Get posts that belong to the selected community
     const res = await fetch(`http://localhost:5000/posts`);
     const allPosts = await res.json();
     this.posts = allPosts.filter(p => p.communityId != null && p.communityId == communityId);

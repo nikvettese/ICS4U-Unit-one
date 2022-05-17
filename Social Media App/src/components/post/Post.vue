@@ -98,6 +98,7 @@ export default {
       const yearsDif = Math.floor(monthDif / 12);
       return `${yearsDif} year(s) ago`;
     },
+    //only shows the top 3 comments if you don't click more details
     top3Comments(){
       if(this.postData.comments.length > 3){
         return this.sortedCommentsByDateDesc.slice(0,3);
@@ -140,6 +141,7 @@ export default {
       let updatedComments = this.postData.comments;
       updatedComments.push(newComment);
       const toBeUpdatedPost = { ...this.postData, comments: updatedComments }
+      //update server
       const res = await fetch(`http://localhost:5000/posts/${postId}`, {
         method: 'PUT',
         headers: {
@@ -147,6 +149,7 @@ export default {
         },
         body: JSON.stringify(toBeUpdatedPost),
       });
+      //update app
       const data = await res.json()
       this.$emit('get-updated-post', data)
       return data;

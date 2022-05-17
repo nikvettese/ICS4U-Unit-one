@@ -20,6 +20,7 @@
 </template>
 
 <script>
+//btw the bottomNav only shows if logged in (line 2)
 export default {
   data: () => ({ value: '' }),
   beforeMount(){

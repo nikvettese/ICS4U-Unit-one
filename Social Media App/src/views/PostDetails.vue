@@ -40,15 +40,19 @@ export default {
       const res = await fetch(`http://localhost:5000/posts/${this.$route.params.id}`);
       return res.json();
     },
+    //like general post (not community post)
     async submitLike(postId){
       let updatedLikes = this.postData.likes;
+      //check if already liked
       const isLiked = this.postData.likes.includes(this.loggingInUserId);
       if(isLiked){
         updatedLikes = updatedLikes.filter(uid => uid != this.loggingInUserId);
       }else {
         updatedLikes.push(this.loggingInUserId.toString());
       }
+      //updates liked users, inherets data
       const toBeUpdatedPost = { ...this.postData, likes: updatedLikes }
+      //submits to server
       const res = await fetch(`http://localhost:5000/posts/${postId}`, {
         method: 'PUT',
         headers: {
@@ -59,6 +63,7 @@ export default {
       const data = await res.json()
       this.postData = data;
     },
+    //updates app
     getUpdatedPost(post){
       this.postData = post;
     }

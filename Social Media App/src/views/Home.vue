@@ -39,6 +39,7 @@ export default {
     }
   },
   methods: {
+    //add a general post
     async addPost(postMessage){
       if(postMessage == null || postMessage.length == 0){
         alert(`What's the post message?`);
@@ -49,7 +50,9 @@ export default {
         "avatar": this.loggingInUser.avatar.toString(),
         "name": this.loggingInUser.fullName.toString()
       };
+      //used to randomly create an original id
       const postId = uuid.v4();
+      //create the post
       const newPost = {
         id: postId,
         owner: postOwner,
@@ -58,7 +61,7 @@ export default {
         comments: [],
         likes: []
       };
-      // Submit new post to server
+      //Submit new post to server
       const res = await fetch(`http://localhost:5000/posts`, {
         method: 'POST',
         headers: {
@@ -66,6 +69,7 @@ export default {
         },
         body: JSON.stringify(newPost),
       });
+      //update app
       const createdPost = await res.json()
       this.posts = [...this.posts, createdPost]
     },
@@ -74,16 +78,20 @@ export default {
           p.id === post.Id ? post : p
       );
     },
+    //like post
     async submitLike(postId){
       const post = this.posts.find(p => p.id == postId);
       let updatedLikes = post.likes;
+      //check is already liked
       const isLiked = post.likes.includes(this.loggingInUserId);
       if(isLiked){
         updatedLikes = updatedLikes.filter(uid => uid != this.loggingInUserId);
       }else {
         updatedLikes.push(this.loggingInUserId.toString());
       }
+      //updates the liked users, post inherited
       const toBeUpdatedPost = { ...post, likes: updatedLikes }
+      //submit to server
       const res = await fetch(`api/posts/${postId}`, {
         method: 'PUT',
         headers: {
@@ -91,6 +99,7 @@ export default {
         },
         body: JSON.stringify(toBeUpdatedPost),
       });
+      //update app
       const data = await res.json()
       this.posts = this.posts.map((post) =>
           post.id === postId ? { ...post, likes: data.likes } : post

@@ -23,6 +23,7 @@
 </template>
 
 <script>
+//the header only shows if logged in (line 2)
 import Avatar from "@/components/layouts/Avatar";
 export default {
   name: 'Header',

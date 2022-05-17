@@ -68,11 +68,13 @@ export default {
     }
   },
   methods: {
+    //login
     async login(){
       const res = await fetch('api/accounts');
       let isAuthenticated = false;
       let authUser = null;
       const accounts = await res.json();
+      //isAuthenticated true only if submitted user/pass = the backend user/pass
       accounts.forEach(acc => {
         if(acc.username == this.username && acc.password == this.password){
           isAuthenticated = true;
@@ -80,12 +82,14 @@ export default {
           localStorage.setItem('auth', JSON.stringify({'username': acc.username, 'userId': acc.id, 'fullName': acc.fullName, 'avatar': acc.avatar}))
         }
       });
+      //if true then take user to home
       if(isAuthenticated){
         this.$router.push({ name: 'Home' });
       }else{
         alert('Wrong username/password');
       }
     },
+    //recently added function, click to go to the page that allows the creation of a new acc
     register(){
       this.$router.push({ name: 'Register' });
     }

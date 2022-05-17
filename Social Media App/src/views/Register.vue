@@ -71,6 +71,12 @@ export default {
     }
   },
   methods: {
+    //this function almost identical to login
+    //key differences:
+    //checks if password = confirm password
+    //checks if username already exists
+    //if previous 2 ok:
+    //CREATES new user
     async register() {
       if(this.password.toString() !== this.confirmPassword.toString()) {
         alert("Password does not match.");

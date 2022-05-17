@@ -40,6 +40,7 @@ export default {
     createdAt: String
   },
   computed:{
+    //shows how long ago comment created
     postTime(){
       const cur = new Date();
       const createdAt = new Date(this.createdAt);
