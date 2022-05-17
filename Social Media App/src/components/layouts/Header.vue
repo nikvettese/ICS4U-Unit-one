@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar v-show="!isLoginPage" color="indigo lighten-1 accent-4" dense dark>
+  <v-app-bar v-show="!isLoginPage && !isRegisterPage" color="indigo lighten-1 accent-4" dense dark>
     <v-row align="center">
       <v-col cols="2" class="float-left">
         <v-img class="text-center"
@@ -39,6 +39,11 @@ export default {
   computed: {
     isLoginPage() {
       if (this.$route.path === '/login')
+        return true;
+      return false;
+    },
+    isRegisterPage() {
+      if (this.$route.path === '/register')
         return true;
       return false;
     }

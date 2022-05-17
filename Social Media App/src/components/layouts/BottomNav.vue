@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation v-show="!isLoginPage"
+  <v-bottom-navigation v-show="!isLoginPage && !isRegisterPage"
       v-model="value"
       color="blue lighten-2"
       horizontal
@@ -28,6 +28,11 @@ export default {
   computed:{
     isLoginPage() {
       if (this.$route.path === '/login')
+        return true;
+      return false;
+    },
+    isRegisterPage() {
+      if (this.$route.path === '/register')
         return true;
       return false;
     }

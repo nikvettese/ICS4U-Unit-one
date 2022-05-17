@@ -53,6 +53,11 @@ export default {
     postData: Object,
     isPostDetail: Boolean
   },
+  
+  //computed is basically a variable which has the value changed depending on the contribution of that computed variable
+  //For instance: numLikes is the computed variable which has contribution as the array 'postData.likes'.
+  //If postData.likes has 5 elements, then numLikes is 5, and when there is a new like, the 'postData.likes' will change to 6
+  //And the value of numLikes will change corresponding to 6
   computed:{
     isLiked(){
       return this.postData.likes.includes(this.loggingInUserId);
@@ -69,6 +74,7 @@ export default {
     loggingInUser(){
       return JSON.parse(localStorage.getItem('auth'));
     },
+    //for the time beside each post
     postTime(){
       const cur = new Date();
       const createdAt = new Date(this.postData.createdAt);

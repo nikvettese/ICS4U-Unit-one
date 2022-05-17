@@ -42,6 +42,18 @@
             </v-btn>
           </v-col>
       </v-row>
+      <v-row align="center"
+          justify="center">
+          <v-col  cols="12"  sm="6"  md="3">
+            <v-btn
+              color="cyan"
+              block
+              xlarge
+              @click="register">
+              Register
+            </v-btn>
+          </v-col>
+      </v-row>
     </v-form>
   </v-container>
 </template>
@@ -73,6 +85,9 @@ export default {
       }else{
         alert('Wrong username/password');
       }
+    },
+    register(){
+      this.$router.push({ name: 'Register' });
     }
   }
 };

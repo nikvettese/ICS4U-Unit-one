@@ -20,6 +20,7 @@ export default {
     Posts,
     AddPost
   },
+  //a variable which has the value changed depending on the contribution (dynamic)
   computed:{
     loggingInUser(){
       return JSON.parse(localStorage.getItem('auth'));
